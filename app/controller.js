@@ -1,11 +1,21 @@
 var profilePageApp = angular
                         .module("profileModule", ["ngRoute"])
                         .config(function ($routeProvider, $locationProvider) {
+                            var authUser =  function () {
+                                if(localStorage.getItem('user') !== null) {
+                                    console.log(localStorage.getItem('user'));
+                                    return true;
+                                } else {return false}
+                            };
                             $locationProvider.hashPrefix('');
                             $routeProvider
                                 .when("/home", {
                                     templateUrl: "view.html",
                                     controller: "profileController"
+                                })
+                                .when("/", {
+                                    templateUrl: "templates/signin.html",
+                                    controller: "authController"
                                 })
                                 .when("/signup", {
                                     templateUrl: "templates/signup.html",
@@ -16,12 +26,13 @@ var profilePageApp = angular
                                     controller: "authController"
                                 })
                                 .otherwise({
-                                    redirecTo: "/home"
+                                    redirecTo: authUser ? "/home" : "/signin"
                                 });
                         })
                         .controller("profileController", function ($scope, $location, $anchorScroll) {
                             var images = "assets/images";
                             var title = "Profile Page";
+
 
                             $scope.images = images;
                             $scope.homePage = "templates/home-page.html";
@@ -30,7 +41,7 @@ var profilePageApp = angular
                                 $location.hash(pageLocation);
                                 $anchorScroll();
                             };
-                            $scope.autherUser = true;
+                            $scope.autherUser = authUser;
                         })
                         .controller("authController", function ($scope, $http) {
                             $scope.signinPage = "templates/signin.html";
