@@ -1,0 +1,194 @@
+html {
+    font-size: 16px;
+    font-family: "Muli", sans-serif;
+}
+
+.home-nav {
+    background-color: #3667db;
+    line-height: 25.6px;
+    padding: 35px 0px;
+    font-weight: 400;
+    text-decoration: none solid rgb(33, 37, 41);
+}
+
+.navbar {
+    color: white;
+}
+
+/* Home Page */
+#homePage {
+    margin-top: 30px;
+}
+
+.profile-image{
+    /* max-width: 2000px;
+    width: 100%;
+    height: 600px; */
+    width: 100%;
+    height: 600px;
+}
+
+.pm-0{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.profile-text{
+    line-height: 25.6px;
+    color: #212529;
+    padding-left: 20px;
+}
+
+.profile-text h4 {
+    font-size: 24px;
+    line-height: 38.4px;
+    margin: 50px 0px 19px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.profile-text h4.front-end-dev{
+    margin: 20px 0px 9px;
+}
+
+.profile-text h1 {
+
+    font-size: 100px;
+    line-height: 120px;
+    letter-spacing: normal;
+    margin: 0px 0px 0px -5px;
+    padding: 5px 0px;
+    font-weight: 600;
+}
+
+.profile-text p {
+    line-height: 24px;
+    margin: 0px 0px 50px;
+    font-weight: 300;
+}
+
+.profile-text button {
+    line-height: 25.6px;
+    padding: 11.5px 30px;
+    font-weight: 300;
+    margin-left: 3px;
+
+}
+/* About PAge */
+
+#aboutPage{
+    line-height: 25.6px;
+}
+
+.about-text{
+    margin: 0px 50px 0px 20px;
+}
+
+.about-text h6 {
+    margin: 0px 0px -5px;
+    padding: 0px 15px;
+    font-weight:500;
+    color: #1616db;
+}
+
+.top-headings {
+    margin-top: 20px;
+    padding: 5px 0px;
+}
+
+hr.dash-highligt{
+    width: 50px;
+    height: 5px;
+    border: 2px solid black;
+}
+
+.about-text h1{
+    font-size: 40px;
+    margin: -5px 0px 0px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin: 40px 0px 7px;
+    font-weight: 500;
+    padding: 5px 0px;
+}
+
+.about-text p {
+    line-height: 30px;
+    margin: 0px 53px 0px 0px;
+}
+
+.about-text .contact {
+    font-size: 18px;
+    line-height: 28.8px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.about-text .contact-tel {
+    margin-right: 35px;
+}
+
+.about-text button {
+    line-height: 25.6px;
+    padding: 11.5px 30px;
+    font-weight: 300;
+    margin-left: 3px;
+}
+
+
+/* footer */
+
+a {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+}
+    a, a:hover {
+      text-decoration: none !important; }
+
+
+  .footer {
+    padding: 7rem 0;
+    font-family: "Poppins", sans-serif; }
+    .foote .footer-site-logo {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 900; }
+      .footer .footer-site-logo a {
+        color: #4200ff; }
+    .footer .nav-links {
+      padding: 0;
+      margin: 0; }
+      .footer .nav-links li {
+        display: inline-block; }
+        .footer .nav-links li a {
+          padding: 10px;
+          color: #000; }
+          .footer-16371 .nav-links li a:hover {
+            color: #4200ff; }
+    .footer .social h3 {
+      font-weight: bold;
+      font-size: 18px;
+      color: #000; }
+    .footer .social ul li {
+      display: inline-block; }
+      .footer .social ul li a {
+        display: inline-block;
+        padding: 10px; }
+      .footer .social ul li.in a {
+        color: #df588a; }
+      .footer .social ul li.tw a {
+        color: #15b8ff; }
+      .footer .social ul li.fb a {
+        color: #3742d0; }
+      .footer .social ul li.dr a {
+        color: #fa38c1; }
+      .footer .social ul li.pin a {
+        color: #dd4d5a; }
+    .footer .copyright {
+      color: #999999; }
+
