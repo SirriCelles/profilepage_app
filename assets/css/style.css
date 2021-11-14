@@ -15,6 +15,10 @@ html {
     color: white;
 }
 
+.nav-item a {
+    cursor: pointer;
+}
+
 /* Home Page */
 #homePage {
     margin-top: 30px;
@@ -151,26 +155,27 @@ a {
       text-decoration: none !important; }
 
 
-  .footer {
+.footer {
     padding: 7rem 0;
     font-family: "Poppins", sans-serif; }
-    .foote .footer-site-logo {
+.foote .footer-site-logo {
       text-align: center;
       font-size: 2rem;
       font-weight: 900; }
-      .footer .footer-site-logo a {
+.footer .footer-site-logo a {
         color: #4200ff; }
-    .footer .nav-links {
+.footer .nav-links {
       padding: 0;
       margin: 0; }
-      .footer .nav-links li {
+.footer .nav-links li {
         display: inline-block; }
-        .footer .nav-links li a {
+.footer .nav-links li a {
+            cursor: pointer;
           padding: 10px;
           color: #000; }
-          .footer-16371 .nav-links li a:hover {
+.footer-16371 .nav-links li a:hover {
             color: #4200ff; }
-    .footer .social h3 {
+.footer .social h3 {
       font-weight: bold;
       font-size: 18px;
       color: #000; }
