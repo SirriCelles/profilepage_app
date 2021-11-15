@@ -126,3 +126,11 @@
   .control--checkbox input:disabled:checked ~ .control__indicator {
     background-color: #7e0cf5;
     opacity: .2; }
+
+.invalid-input{
+    color: #f44336;
+    vertical-align: baseline;
+    margin: 0.3125rem 0rem 0rem;
+    text-align: start;
+    font-size: 0.875rem;
+}

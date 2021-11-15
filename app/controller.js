@@ -1,11 +1,14 @@
+/// <reference path="angular.js">
+
 var profilePageApp = angular
-                        .module("profileModule", ["ngRoute"])
+                        .module("profileModule", ["ngRoute", "firebase"])
+                        .constant('FBMS', 'https://console.firebase.google.com/project/profile-page-starter/database/profile-page-starter-default-rtdb/data')
                         .config(function ($routeProvider, $locationProvider) {
                             var authUser =  function () {
                                 if(localStorage.getItem('user') !== null) {
                                     console.log(localStorage.getItem('user'));
                                     return true;
-                                } else {return false}
+                                } else {return false;}
                             };
                             $locationProvider.hashPrefix('');
                             $routeProvider
@@ -41,20 +44,15 @@ var profilePageApp = angular
                                 $location.hash(pageLocation);
                                 $anchorScroll();
                             };
-                            $scope.autherUser = authUser;
+                            $scope.title = title;
                         })
-                        .controller("authController", function ($scope, $http) {
+                        .controller("authController", ['FBMS', function ($scope, FBMS) {
                             $scope.signinPage = "templates/signin.html";
                             $scope.signupPage = "templates/signup.html";
-                            // $scope.signup = function () {
-                            //     $http.post("url").then((response) => {
-                            //         return response;
-                            //     });
-                            // };
 
-                            // $scope.signin = function () {
-                            //     $http.get("url").then((response) => {
-                            //         return response;
-                            //     });
-                            // }
-                        });
+                            var register = function (data) {
+                                console.log(data);
+                            };
+
+                            $scope.register = register;
+                        }]);
