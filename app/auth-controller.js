@@ -48,14 +48,17 @@ angular.module('profileModule')
             if(matchedUser == null) {
                 users.push(newUser);
                 const user = {
-                    id: matchedUser.id,
-                    email: matchedUser.email
+                    id: newUser.id,
+                    email: newUser.email
                 };
                 storage(user);
                 message = {
                     status: 200,
                     data: "Account created successfully"};
                 loadMessage();
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1000);
             } else {
                 message = {
                     status: 404,
@@ -97,7 +100,9 @@ angular.module('profileModule')
         };
 
 
-
+        $scope.navigate = function(path) {
+            $location.path(path);
+        };
         $scope.register = register;
         $scope.login = login;
         $scope.status = message.status;

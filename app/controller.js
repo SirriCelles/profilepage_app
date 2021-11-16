@@ -2,6 +2,14 @@
 
 var profilePageApp = angular
                         .module("profileModule", ["ngRoute"])
+                        .run(function($rootScope, $location) {
+                            // register listener to watch route changes
+                            $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+                                if ( localStorage.getItem('user')) {
+                                    $location.path("/home");
+                                }
+                            });
+                        })
                         .config(function ($routeProvider, $locationProvider) {
                             var authUser =  function () {
                                 if(localStorage.key('user')) {
@@ -34,16 +42,6 @@ var profilePageApp = angular
                                     redirecTo: authUser ? "/home" : "/signin"
                                 });
                         })
-                        .run(function($rootScope, $location) {
-                            // register listener to watch route changes
-                            $rootScope.$on( "$routeChangeStart", function(event, next, current) {
-                                if ( localStorage.getItem('user')) {
-                                    $location.path("/home");
-                                }else {
-                                    $location.path("/signin");
-                                }
-                            });
-                        })
                         .controller("profileController", function ($scope, $location, $anchorScroll) {
                             var images = "assets/images";
                             var title = "Profile Page";
@@ -58,8 +56,7 @@ var profilePageApp = angular
                             };
                             $scope.title = title;
                             $scope.logout = function() {
-                                console.log('logout');
                                 localStorage.removeItem('user');
-                                window.location.reload();
+                                $location.path('/signin');
                             };
                         });
