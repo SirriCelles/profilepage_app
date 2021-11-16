@@ -6,9 +6,8 @@
           <div class="form-block">
             <div class="text-center mb-5">
               <h3>Create an Account</h3>
-
             </div>
-            <form name="signUpForm" ng-submit="register('signUpForm')">
+            <form name="signUpForm" ng-submit="register(profile)">
               <div class="form-group first mb-3">
                 <label for="email" class="mb-2">Email</label>
                 <input
@@ -54,7 +53,6 @@
                   value="Sign up"
                   class="btn btn-primary btn-block"
                   ng-disabled="(signUpForm.$invalid)"
-                  ng-click="register('signUpForm')"
                 />
               </div>
               <div class="d-flex justify-content-center mt-3">

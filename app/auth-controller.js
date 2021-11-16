@@ -1,23 +1,16 @@
-//
-
 angular.module('profileModule')
-    .controller("authController", ['FBMS', function ($scope, FBMS) {
-            $scope.signinPage = "templates/signin.html";
-            $scope.signupPage = "templates/signup.html";
+    .controller("authController", function ($scope) {
+        $scope.signinPage = "templates/signin.html";
+        $scope.signupPage = "templates/signup.html";
 
-            var self = this;
-            var ref = new Firebase(FBMS);
-            self.signUp = function() {
-                ref.createUser({
-                    email: self.email,
-                    password: self.password
-                }), function(error, userData) {
-                    if (error) {
-                        console.log("Error creating User: ", error);
-                    } else {
-                        console.log("successfully created user account with uid: ", userData.uid);
-                        console.log(userData);
-                    }
-                }
-            }
-    }]);
+        var register = function (data) {
+            console.log(data);
+        };
+
+        var login = (data) => {
+            console.log(data);
+        };
+
+        $scope.register = register;
+        $scope.login = login;
+    });
