@@ -4,6 +4,9 @@ var profilePageApp = angular
                         .module("profileModule", ["ngRoute"])
                         .config(function ($routeProvider, $locationProvider) {
                             var authUser =  function () {
+                                if(localStorage.key('user')) {
+                                    console.log(yes);
+                                }
                                 if(localStorage.getItem('user') !== null) {
                                     console.log(localStorage.getItem('user'));
                                     return true;
@@ -31,6 +34,16 @@ var profilePageApp = angular
                                     redirecTo: authUser ? "/home" : "/signin"
                                 });
                         })
+                        .run(function($rootScope, $location) {
+                            // register listener to watch route changes
+                            $rootScope.$on( "$routeChangeStart", function(event, next, current) {
+                                if ( localStorage.getItem('user')) {
+                                    $location.path("/home");
+                                }else {
+                                    $location.path("/signin");
+                                }
+                            });
+                        })
                         .controller("profileController", function ($scope, $location, $anchorScroll) {
                             var images = "assets/images";
                             var title = "Profile Page";
@@ -44,4 +57,9 @@ var profilePageApp = angular
                                 $anchorScroll();
                             };
                             $scope.title = title;
+                            $scope.logout = function() {
+                                console.log('logout');
+                                localStorage.removeItem('user');
+                                window.location.reload();
+                            };
                         });

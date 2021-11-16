@@ -5,6 +5,17 @@
         <div class="col-md-6 mt-5">
           <div class="form-block">
             <div class="text-center mb-5">
+              <div  ng-style="{display: (status === 200) ? 'visible' : 'none'}">
+                <div class="alert alert-success">
+                  <strong>Success!</strong> {{message}}
+               </div>
+              </div>
+              <div  ng-style="{display: (status === 405) ? 'visible' : 'none'}">
+                <div class="alert alert-warning">
+                  <strong>Error!</strong> {{message}}
+               </div>
+              </div>
+
               <h3>Login</h3>
 
             </div>

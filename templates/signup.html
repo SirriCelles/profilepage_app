@@ -5,6 +5,17 @@
         <div class="col-md-6">
           <div class="form-block">
             <div class="text-center mb-5">
+              <div  ng-style="{display: (status === 200) ? 'visible' : 'none'}">
+                <div class="alert alert-success">
+                  <strong>Success!</strong> {{message}}
+               </div>
+              </div>
+              <div  ng-style="{display: (status === 404) ? 'visible' : 'none'}">
+                <div class="alert alert-warning">
+                  <strong>Error!</strong> {{message}}
+               </div>
+              </div>
+
               <h3>Create an Account</h3>
             </div>
             <form name="signUpForm" ng-submit="register(profile)">
@@ -59,6 +70,12 @@
                 <a href="#/signin" class="signup-button">Sign In</a>
               </div>
             </form>
+
+            <div>
+              <ul>
+                <li ng-repeat="user in users">{{user.email}}</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
