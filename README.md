@@ -36,4 +36,4 @@ Contributions, issues and feature requests are welcome!
 Give a ⭐️ if you like this project!
 
 ## Acknowledgment
-* Design idea by 
+* Design idea by [Knuford](https://preview.colorlib.com/#knuford)
